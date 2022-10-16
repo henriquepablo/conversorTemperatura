@@ -5,8 +5,18 @@ function pegarDados() {
 
     const camp2 = document.querySelector('#options2').value;
 
-    console.log(camp1, camp2)
+    const temperaturaValor = Number(document.querySelector('#input').value);
+
+    verificaTemperatura(temperaturaValor);
 }
 
+function verificaTemperatura(temperaturaValor) {
+    if (isNaN(temperaturaValor)) {
+        window.alert('O campo de digitação só aceita números');
+    }
+    else if (!temperaturaValor === true) {
+        window.alert('O campo de digitação está vazio');
+    }
 
+}
 
