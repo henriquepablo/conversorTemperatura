@@ -7,16 +7,30 @@ function pegarDados() {
 
     const temperaturaValor = Number(document.querySelector('#input').value);
 
-    verificaTemperatura(temperaturaValor);
+    verificaTemperatura(camp1, camp2, temperaturaValor);
 }
 
-function verificaTemperatura(temperaturaValor) {
+function verificaTemperatura(camp1, camp2, temperaturaValor) {
     if (isNaN(temperaturaValor)) {
-        window.alert('O campo de digitação só aceita números');
+        window.alert('O campo de digitação só aceita números.');
     }
     else if (!temperaturaValor === true) {
-        window.alert('O campo de digitação está vazio');
+        window.alert('O campo de digitação está vazio.');
     }
+    else {
+        conversao(camp1, camp2, temperaturaValor)
+    }
+}
 
+function conversao(camp1, camp2, temperaturaValor) {
+    if (camp1 === camp2) {
+        window.alert('Para converter, selecione ao menos uma escala de temperatura diferente.');
+    }
+    else {
+        if ((camp1 === 'Celsius') && (camp2 === 'Fahrenheit')){
+            const fahrenheit = (temperaturaValor * 9 / 5) + 32
+            window.alert(`${temperaturaValor}°C (grau(s) Celsius) é igual a ${fahrenheit}°F (grau(s) Fahrenheit.`);
+        }
+    }
 }
 
