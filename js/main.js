@@ -1,11 +1,13 @@
 const button = document.querySelector('#button').addEventListener('click', pegarDados);
 
+const p = document.querySelector('#exibir');
+
 function pegarDados() {
     const camp1 = document.querySelector('#options1').value;
 
     const camp2 = document.querySelector('#options2').value;
 
-    const temperaturaValor = Number(document.querySelector('#input').value);
+    const temperaturaValor = document.querySelector('#input').value;
 
     verificaTemperatura(camp1, camp2, temperaturaValor);
 }
@@ -29,7 +31,8 @@ function conversao(camp1, camp2, temperaturaValor) {
     else {
         if ((camp1 === 'Celsius') && (camp2 === 'Fahrenheit')){
             const fahrenheit = (temperaturaValor * 9 / 5) + 32
-            window.alert(`${temperaturaValor}°C (grau(s) Celsius) é igual a ${fahrenheit}°F (grau(s) Fahrenheit.`);
+            p.innerHTML = `${temperaturaValor}°C (grau(s) Celsius) é igual a ${fahrenheit}°F (grau(s) Fahrenheit. <br> <br>
+            Fórmula: (°C * 9 / 5) + 32`;
         }
     }
 }
