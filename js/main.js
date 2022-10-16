@@ -14,10 +14,10 @@ function pegarDados() {
 
 function verificaTemperatura(camp1, camp2, temperaturaValor) {
     if (isNaN(temperaturaValor)) {
-        window.alert('O campo de digitação só aceita números.');
+        p.innerHTML = 'O campo de digitação só aceita números.';
     }
     else if (!temperaturaValor === true) {
-        window.alert('O campo de digitação está vazio.');
+        p.innerHTML = 'O campo de digitação está vazio.';
     }
     else {
         conversao(camp1, camp2, temperaturaValor)
@@ -26,7 +26,7 @@ function verificaTemperatura(camp1, camp2, temperaturaValor) {
 
 function conversao(camp1, camp2, temperaturaValor) {
     if (camp1 === camp2) {
-        window.alert('Para converter, selecione ao menos uma escala de temperatura diferente.');
+        p.innerHTML = 'Para converter, selecione ao menos uma escala de temperatura diferente.';
     }
     else {
         if ((camp1 === 'Celsius') && (camp2 === 'Fahrenheit')){
