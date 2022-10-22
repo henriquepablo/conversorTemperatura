@@ -28,21 +28,31 @@ function conversao(camp1, camp2, temperaturaValor) {
     if (camp1 === camp2) {
         p.innerHTML = 'Para converter, selecione ao menos uma escala de temperatura diferente.';
     }
+
     else {
         if ((camp1 === 'Celsius') && (camp2 === 'Fahrenheit')){
             const fahrenheit = (temperaturaValor * 9 / 5) + 32
             p.innerHTML = `${temperaturaValor}°C (grau(s) Celsius) é igual a ${fahrenheit}°F (grau(s) Fahrenheit). <br> <br>
             Fórmula: (°C * 9 / 5) + 32`;
         }
+
         else if ((camp1 === 'Celsius') && (camp2 === 'Kelvin')) {
             const Kelvin = Number(temperaturaValor) + 273.15;
-            p.innerHTML = `${temperaturaValor}° (grau(s) Celsius) é igual a ${Kelvin}K (grau(s) Kelvin). <br> <br>
+            p.innerHTML = `${temperaturaValor}° (grau(s) Celsius) é igual a ${Kelvin}°K (grau(s) Kelvin). <br> <br>
             Fórmula: °C + 273,15`;
         }
+
         else if ((camp1 === 'Fahrenheit') && (camp2 === 'Celsius')) {
             const celsius = (Number(temperaturaValor) - 32) * 5 / 9;
             p.innerHTML = `${temperaturaValor}°F (grau(s) Fahrenheit) é igual a ${celsius}°C (grau(s) Celsius). <br> <br>
             Fórmula: (°F - 32) * 5 / 9;
+            `
+        }
+
+        else if ((camp1 === 'Fahrenheit') && (camp2 === 'Kelvin')) {
+            const Kelvin = ((Number(temperaturaValor) - 32) * 5 / 9 + 273.15).toFixed(3);
+            p.innerHTML = `${temperaturaValor}°F (grau(s) Fahrenheit) é igual a ${Kelvin}°k (grau(s) Kelvin). <br> <br>
+            Fórmula: (°F - 32) * 5 / 9 + 273.15;
             `
         }
     }
