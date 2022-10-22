@@ -9,10 +9,10 @@ function pegarDados() {
 
     const temperaturaValor = document.querySelector('#input').value;
 
-    verificaTemperatura(camp1, camp2, temperaturaValor);
+    verificaEntradaDosDados(camp1, camp2, temperaturaValor);
 }
 
-function verificaTemperatura(camp1, camp2, temperaturaValor) {
+function verificaEntradaDosDados(camp1, camp2, temperaturaValor) {
     if (isNaN(temperaturaValor)) {
         p.innerHTML = 'O campo de digitação só aceita números.';
     }
@@ -31,8 +31,13 @@ function conversao(camp1, camp2, temperaturaValor) {
     else {
         if ((camp1 === 'Celsius') && (camp2 === 'Fahrenheit')){
             const fahrenheit = (temperaturaValor * 9 / 5) + 32
-            p.innerHTML = `${temperaturaValor}°C (grau(s) Celsius) é igual a ${fahrenheit}°F (grau(s) Fahrenheit. <br> <br>
+            p.innerHTML = `${temperaturaValor}°C (grau(s) Celsius) é igual a ${fahrenheit}°F (grau(s) Fahrenheit). <br> <br>
             Fórmula: (°C * 9 / 5) + 32`;
+        }
+        else if ((camp1 === 'Celsius') && (camp2 === 'Kelvin')) {
+            const Kelvin = Number(temperaturaValor) + 273.15;
+            p.innerHTML = `${temperaturaValor}° (grau(s) Celsius) é igual a ${Kelvin}K (grau(s) Kelvin). <br> <br>
+            Fórmula: °C + 273,15`
         }
     }
 }
