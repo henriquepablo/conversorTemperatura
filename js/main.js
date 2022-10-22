@@ -68,6 +68,22 @@ function conversao(camp1, camp2, temperaturaValor) {
     }
 }
 
+/**
+ * valorTemperatura = é o valor digitado pelo usuário
+ * escalaTemp1 = Ex: O usuário escolheu celsius. Então celsius vai ser convertido para fahrenheit ou Kelvin.
+ * temperatura = é o valor digitado que já foi convertido para outra escala.
+ * escalaTemp2 = Ex: O usuário escolheu celsius e vai converter para Fahrenheit. escalaTemp1 = celsius, escalaTemp2 = fahrenheit 
+ * 
+ * Exemplo:
+ * valorTemperatura = 10 
+ * escalaTemp1 = celsius
+ * temperatura = 50 (conversão de 10°C para fahrenheit)
+ * escalaTemp2 = fahrenheit
+ *                                                                      
+ *                      10                celsius                   50          fahrenheit
+ * p.innerHTML = `${valorTemperatura} ${escalaTemp1} é igual a ${temperatura} ${escalaTemp2}`; 
+ */
+
 function exibirNatela(valorTemperatura, escalaTemp1, temperatura, escalaTemp2, formula) {
     p.innerHTML = `${valorTemperatura} ${escalaTemp1} é igual a ${temperatura} ${escalaTemp2}. <br> <br>
     Fórmula: ${formula}`;
