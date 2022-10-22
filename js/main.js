@@ -43,7 +43,7 @@ function conversao(camp1, camp2, temperaturaValor) {
         }
 
         else if ((camp1 === 'Fahrenheit') && (camp2 === 'Celsius')) {
-            const celsius = (Number(temperaturaValor) - 32) * 5 / 9;
+            const celsius = ((Number(temperaturaValor) - 32) * 5 / 9).toFixed(2);
             p.innerHTML = `${temperaturaValor}°F (grau(s) Fahrenheit) é igual a ${celsius}°C (grau(s) Celsius). <br> <br>
             Fórmula: (°F - 32) * 5 / 9`;
         }
