@@ -38,23 +38,32 @@ function conversao(camp1, camp2, temperaturaValor) {
 
         else if ((camp1 === 'Celsius') && (camp2 === 'Kelvin')) {
             const Kelvin = Number(temperaturaValor) + 273.15;
-            p.innerHTML = `${temperaturaValor}° (grau(s) Celsius) é igual a ${Kelvin}°K (grau(s) Kelvin). <br> <br>
+            p.innerHTML = `${temperaturaValor}° (grau(s) Celsius) é igual a ${Kelvin}K (Kelvin). <br> <br>
             Fórmula: °C + 273,15`;
         }
 
         else if ((camp1 === 'Fahrenheit') && (camp2 === 'Celsius')) {
             const celsius = (Number(temperaturaValor) - 32) * 5 / 9;
             p.innerHTML = `${temperaturaValor}°F (grau(s) Fahrenheit) é igual a ${celsius}°C (grau(s) Celsius). <br> <br>
-            Fórmula: (°F - 32) * 5 / 9;
-            `
+            Fórmula: (°F - 32) * 5 / 9`;
         }
 
         else if ((camp1 === 'Fahrenheit') && (camp2 === 'Kelvin')) {
             const Kelvin = ((Number(temperaturaValor) - 32) * 5 / 9 + 273.15).toFixed(3);
-            p.innerHTML = `${temperaturaValor}°F (grau(s) Fahrenheit) é igual a ${Kelvin}°k (grau(s) Kelvin). <br> <br>
-            Fórmula: (°F - 32) * 5 / 9 + 273.15;
-            `
+            p.innerHTML = `${temperaturaValor}°F (grau(s) Fahrenheit) é igual a ${Kelvin}k (Kelvin). <br> <br>
+            Fórmula: (°F - 32) * 5 / 9 + 273.15`;
+        }
+
+        else if ((camp1 === 'Kelvin') && (camp2 === 'Celsius')) {
+            const celsius = Number(temperaturaValor) - 273.15;
+            p.innerHTML = `${temperaturaValor}K (Kelvin) é igual a ${celsius}°C (grau(s) Celsius). <br> <br>
+            Fórmula: K - 273,15`;
+        }
+
+        else if ((camp1 === 'Kelvin') && (camp2 === 'Fahrenheit')) {
+            const fahrenheit = ((Number(temperaturaValor) - 273.15) * 9 / 5 + 32).toFixed(2);
+            p.innerHTML = `${temperaturaValor}K (Kelvin) é igual a ${fahrenheit}°F (grau(s) Fahrenheit). <br> <br>
+            Fórmula: (k - 273,15) * 9 / 5 + 32`;
         }
     }
 }
-
